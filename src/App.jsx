@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import { supabase } from "./lib/supabaseClient";
 
 function App() {
+  useEffect(() => {
+    document.title = "SkyGuyver";
+  }, []);
+
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [signupMessage, setSignupMessage] = useState("");
