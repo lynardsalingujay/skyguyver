@@ -150,9 +150,17 @@ function App() {
                         Contact
                       </button>
                     </div>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
-                      Get Started
-                    </button>
+                    <div className="flex items-center space-x-4">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+                        Get Started
+                      </button>
+                      <a
+                        href="/login"
+                        className="bg-slate-700 hover:bg-slate-800 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+                      >
+                        Login
+                      </a>
+                    </div>
                   </div>
                 </div>
               </nav>
