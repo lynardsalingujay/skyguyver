@@ -91,7 +91,7 @@ function App() {
           path="/admin"
           element={
             <RequireAuth role="admin">
-              <AdminDashboard user={user} />
+              <AdminDashboard user={user} setUser={setUser} />
             </RequireAuth>
           }
         />
