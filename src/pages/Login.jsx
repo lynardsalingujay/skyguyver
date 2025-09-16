@@ -50,6 +50,10 @@ function Login({ setUser }) {
     }
   };
 
+  const handleBack = () => {
+    navigate("/");
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-900">
       <form
@@ -78,10 +82,17 @@ function Login({ setUser }) {
         {error && <p className="text-red-400 mb-4">{error}</p>}
         <button
           type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded font-medium"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded font-medium mb-4"
           disabled={isLoading}
         >
           {isLoading ? "Logging in..." : "Login"}
+        </button>
+        <button
+          type="button"
+          onClick={handleBack}
+          className="w-full border border-white text-white py-2 rounded font-medium bg-transparent hover:bg-white hover:text-slate-800 transition-colors"
+        >
+          Return to Home
         </button>
       </form>
     </div>
