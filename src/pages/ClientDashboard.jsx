@@ -7,8 +7,12 @@ const VAPI_API_KEY = import.meta.env.VITE_VAPI_API_KEY;
 function ClientDashboard({ user, setUser }) {
   const navigate = useNavigate();
   const [assistant, setAssistant] = useState(null);
+  const [systemPrompt, setSystemPrompt] = useState("");
+  const [isSavingPrompt, setIsSavingPrompt] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [model, setModel] = useState(null);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
@@ -32,7 +36,6 @@ function ClientDashboard({ user, setUser }) {
       }
 
       if (profile?.assistant_id) {
-        // Fetch assistant info from Vapi
         try {
           const response = await fetch(
             `https://api.vapi.ai/assistant/${profile.assistant_id}`,
@@ -49,6 +52,8 @@ function ClientDashboard({ user, setUser }) {
             name: data.name,
             status: data.status || "active",
           });
+          setModel(data.model); // Store the full model object
+          setSystemPrompt(data.model?.messages?.[0]?.content || ""); // <-- This fills the field
         } catch (err) {
           setError("Failed to fetch assistant info.");
         }
@@ -69,7 +74,7 @@ function ClientDashboard({ user, setUser }) {
           Authorization: `Bearer ${VAPI_API_KEY}`,
         },
         body: JSON.stringify({
-          name: "Client Assistant",
+          name: `${user.email} Assistant`, // <-- Use client email for assistant name
           // Add other required fields here
         }),
       });
@@ -88,6 +93,20 @@ function ClientDashboard({ user, setUser }) {
         status: data.status || "active",
       });
 
+      // Fetch the full assistant object to get the model
+      const fetchResponse = await fetch(
+        `https://api.vapi.ai/assistant/${data.id}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${VAPI_API_KEY}`,
+          },
+        }
+      );
+      const fetchData = await fetchResponse.json();
+      setModel(fetchData.model);
+      setSystemPrompt(fetchData.model?.messages?.[0]?.content || "");
+
       // Update Supabase profile with assistant_id
       const { error: dbError } = await supabase
         .from("profiles")
@@ -104,9 +123,113 @@ function ClientDashboard({ user, setUser }) {
     }
   };
 
+  const handleSavePrompt = async () => {
+    console.log("Save Prompt button clicked");
+    if (!assistant?.id || !model) {
+      console.log("Missing assistant or model", assistant, model);
+      return;
+    }
+    setIsSavingPrompt(true);
+    setError("");
+    setSuccess("");
+    try {
+      const updatedModel = {
+        provider: model.provider || "openai",
+        model: model.model || "gpt-4o",
+        messages: [
+          {
+            role: "system",
+            content: systemPrompt,
+          },
+        ],
+        toolIds: Array.isArray(model.toolIds) ? model.toolIds : [],
+        maxTokens: typeof model.maxTokens === "number" ? model.maxTokens : 50,
+        temperature:
+          typeof model.temperature === "number" ? model.temperature : 0,
+      };
+
+      console.log(
+        "PATCH URL:",
+        `https://api.vapi.ai/assistant/${assistant.id}`
+      );
+      console.log("PATCH payload:", { model: updatedModel });
+
+      const response = await fetch(
+        `https://api.vapi.ai/assistant/${assistant.id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${VAPI_API_KEY}`,
+          },
+          body: JSON.stringify({
+            model: updatedModel,
+          }),
+        }
+      );
+      const responseBody = await response.text();
+      console.log("PATCH response:", responseBody);
+      if (!response.ok) {
+        throw new Error(
+          `Failed to update system prompt: ${response.status} - ${responseBody}`
+        );
+      }
+      setSuccess("System prompt updated successfully!");
+      // Refetch assistant info
+      const refreshed = await fetch(
+        `https://api.vapi.ai/assistant/${assistant.id}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${VAPI_API_KEY}`,
+          },
+        }
+      );
+      const refreshedData = await refreshed.json();
+      setModel(refreshedData.model);
+      setSystemPrompt(refreshedData.model?.messages?.[0]?.content || "");
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsSavingPrompt(false);
+    }
+  };
+
   const handleBack = () => {
     navigate("/");
   };
+
+  useEffect(() => {
+    if (success) {
+      const timer = setTimeout(() => setSuccess(""), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [success]);
+
+  useEffect(() => {
+    // Only fetch if assistant exists and model is not set
+    if (assistant?.id && !model) {
+      const fetchModel = async () => {
+        try {
+          const response = await fetch(
+            `https://api.vapi.ai/assistant/${assistant.id}`,
+            {
+              method: "GET",
+              headers: {
+                Authorization: `Bearer ${VAPI_API_KEY}`,
+              },
+            }
+          );
+          const data = await response.json();
+          setModel(data.model);
+          setSystemPrompt(data.model?.messages?.[0]?.content || "");
+        } catch (err) {
+          setError("Failed to fetch assistant model.");
+        }
+      };
+      fetchModel();
+    }
+  }, [assistant, model]);
 
   return (
     <div className="min-h-screen bg-slate-900 text-white p-8">
@@ -142,6 +265,27 @@ function ClientDashboard({ user, setUser }) {
             <p>
               <span className="font-bold">Assistant ID:</span> {assistant.id}
             </p>
+            <div className="mt-4">
+              <label className="block font-bold mb-2" htmlFor="systemPrompt">
+                System Prompt
+              </label>
+              <textarea
+                id="systemPrompt"
+                className="w-full bg-slate-900 border border-slate-700 rounded p-2 text-white mb-2"
+                rows={15}
+                value={systemPrompt}
+                onChange={(e) => setSystemPrompt(e.target.value)}
+                placeholder="Enter system prompt..."
+              />
+              <button
+                onClick={handleSavePrompt}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded font-medium"
+                // disabled={isSavingPrompt} // Remove for debugging
+              >
+                {isSavingPrompt ? "Saving..." : "Save Prompt"}
+              </button>
+              {success && <p className="text-green-400 mt-2">{success}</p>}
+            </div>
           </div>
         ) : (
           <button
