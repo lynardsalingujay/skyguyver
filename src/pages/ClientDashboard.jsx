@@ -272,7 +272,7 @@ function ClientDashboard({ user, setUser }) {
               <textarea
                 id="systemPrompt"
                 className="w-full bg-slate-900 border border-slate-700 rounded p-2 text-white mb-2"
-                rows={15}
+                rows={10}
                 value={systemPrompt}
                 onChange={(e) => setSystemPrompt(e.target.value)}
                 placeholder="Enter system prompt..."
