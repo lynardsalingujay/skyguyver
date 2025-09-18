@@ -266,84 +266,141 @@ function App() {
               </section>
 
               {/* Pricing Section */}
-              <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8">
-                <div className="max-w-7xl mx-auto">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-                    Simple, Transparent{" "}
-                    <span className="text-blue-400">Pricing</span>
+              <section id="pricing" className="py-16 bg-slate-900">
+                <div className="max-w-6xl mx-auto px-4">
+                  <h2 className="text-3xl font-bold text-white mb-8 text-center">
+                    Plans & Pricing
                   </h2>
-                  <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    {[
-                      {
-                        name: "Starter",
-                        price: "$49",
-                        description: "Perfect for small businesses",
-                        features: [
-                          "100 call minutes/month",
-                          "1 phone number",
-                          "Basic AI assistant",
-                          "Email support",
-                        ],
-                      },
-                      {
-                        name: "Professional",
-                        price: "$99",
-                        description: "For growing businesses",
-                        features: [
-                          "500 call minutes/month",
-                          "3 phone numbers",
-                          "Advanced AI",
-                          "Priority support",
-                          "Custom greetings",
-                        ],
-                      },
-                      {
-                        name: "Enterprise",
-                        price: "$249",
-                        description: "For large organizations",
-                        features: [
-                          "2000 call minutes/month",
-                          "Unlimited numbers",
-                          "Custom AI training",
-                          "24/7 support",
-                          "API access",
-                        ],
-                      },
-                    ].map((plan, index) => (
-                      <div
-                        key={index}
-                        className={`bg-slate-800/50 p-8 rounded-2xl border ${
-                          index === 1
-                            ? "border-blue-500 scale-105"
-                            : "border-slate-700"
-                        } transition-all`}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* Entry Plan */}
+                    <div className="bg-slate-800 rounded-lg p-8 shadow text-white flex flex-col justify-between w-full min-w-[280px]">
+                      <h3 className="text-2xl font-bold mb-2">ENTRY PLAN</h3>
+                      <p className="text-xl font-semibold mb-4">
+                        $39 USD / $66 NZD per month
+                      </p>
+                      <ul className="mb-6 space-y-2">
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          50 minutes of AI voice calls
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          NZ local phone number included
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          Basic OpenAI voices (3 voice options)
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          Speech recognition & AI responses
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          24/7 automated answering
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          Email support only
+                        </li>
+                      </ul>
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded font-medium mt-auto">
+                        Get Started
+                      </button>
+                    </div>
+                    {/* Starter Plan */}
+                    <div className="bg-slate-800 rounded-lg p-8 shadow text-white flex flex-col justify-between w-full min-w-[280px] border-2 border-blue-500">
+                      <h3 className="text-2xl font-bold mb-2">
+                        STARTER PLAN{" "}
+                        <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded ml-2">
+                          Most Popular
+                        </span>
+                      </h3>
+                      <p className="text-xl font-semibold mb-4">
+                        $59 USD / $99 NZD per month
+                      </p>
+                      <ul className="mb-6 space-y-2">
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          100 minutes of AI voice calls
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          NZ local phone number included
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          Basic OpenAI voices (6 voice options)
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          Speech recognition & AI responses
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          24/7 automated answering
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          Basic analytics dashboard
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          Live chat support
+                        </li>
+                      </ul>
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded font-medium mt-auto">
+                        Get Started
+                      </button>
+                    </div>
+                    {/* Business Plan */}
+                    <div className="bg-slate-700 rounded-lg p-8 shadow text-slate-400 flex flex-col justify-between w-full min-w-[280px] opacity-50 cursor-not-allowed">
+                      <h3 className="text-2xl font-bold mb-2">
+                        BUSINESS PLAN{" "}
+                        <span className="bg-slate-600 text-white text-xs px-2 py-1 rounded ml-2">
+                          Coming Soon
+                        </span>
+                      </h3>
+                      <p className="text-xl font-semibold mb-4">
+                        $149 USD / $251 NZD per month
+                      </p>
+                      <ul className="mb-6 space-y-2">
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          300 minutes of AI voice calls
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          NZ local + toll-free number
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          Premium OpenAI voices (HD quality)
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          Advanced conversation flows
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          CRM integrations
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          Call recordings & transcripts
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-blue-400 text-lg">✦</span>
+                          Priority support
+                        </li>
+                      </ul>
+                      <button
+                        className="bg-slate-600 text-white px-6 py-2 rounded font-medium mt-auto cursor-not-allowed"
+                        disabled
                       >
-                        <h3 className="text-2xl font-bold text-white mb-2">
-                          {plan.name}
-                        </h3>
-                        <div className="text-3xl font-bold text-blue-400 mb-4">
-                          {plan.price}
-                          <span className="text-sm text-slate-400">/month</span>
-                        </div>
-                        <p className="text-slate-300 mb-6">
-                          {plan.description}
-                        </p>
-                        <ul className="space-y-3 mb-8">
-                          {plan.features.map((feature, i) => (
-                            <li
-                              key={i}
-                              className="flex items-center text-slate-300"
-                            >
-                              <span className="text-green-400 mr-2">✓</span>
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-colors">
-                          Get Started
-                        </button>
-                      </div>
-                    ))}
+                        Not Available
+                      </button>
+                    </div>
                   </div>
                 </div>
               </section>
