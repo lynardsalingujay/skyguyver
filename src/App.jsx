@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   Navigate,
+  Link,
 } from "react-router-dom";
 import { supabase } from "./lib/supabaseClient";
 import Login from "./pages/Login";
@@ -11,6 +12,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import ClientDashboard from "./pages/ClientDashboard";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import GetStarted from "./pages/GetStarted";
 
 function App() {
   useEffect(() => {
@@ -107,6 +109,7 @@ function App() {
         />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/get-started" element={<GetStarted />} />
         <Route
           path="*"
           element={
@@ -305,9 +308,12 @@ function App() {
                           </li>
                         ))}
                       </ul>
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded font-medium mt-auto">
+                      <Link
+                        to="/get-started?plan=entry"
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded font-medium mt-auto text-center block"
+                      >
                         Get Started
-                      </button>
+                      </Link>
                     </div>
                     {/* Starter Plan */}
                     <div className="bg-slate-800 rounded-lg p-8 shadow text-white flex flex-col justify-between w-full min-w-[280px] border-2 border-blue-500">
@@ -348,9 +354,12 @@ function App() {
                           </li>
                         ))}
                       </ul>
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded font-medium mt-auto">
+                      <Link
+                        to="/get-started?plan=starter"
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded font-medium mt-auto text-center block"
+                      >
                         Get Started
-                      </button>
+                      </Link>
                     </div>
                     {/* Business Plan */}
                     <div className="bg-slate-700 rounded-lg p-8 shadow text-slate-400 flex flex-col justify-between w-full min-w-[280px] opacity-50 cursor-not-allowed">
