@@ -275,107 +275,35 @@ function App() {
                     {/* Entry Plan */}
                     <div className="bg-slate-800 rounded-lg p-8 shadow text-white flex flex-col justify-between w-full min-w-[280px]">
                       <h3 className="text-2xl font-bold mb-2">ENTRY PLAN</h3>
-                      <p className="text-xl font-semibold mb-4">
+                      <p className="text-xl font-semibold">
                         $39 USD / $66 NZD per month
                       </p>
-                      <ul className="mb-6 space-y-2">
-                        <li className="flex items-center gap-2">
-                          {/* Green check SVG */}
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          50 minutes of AI voice calls
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          NZ local phone number included
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          Basic OpenAI voices (3 voice options)
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          Speech recognition & AI responses
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          24/7 automated answering
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          Email support only
-                        </li>
+                      <ul className="mb-6 space-y-2 mt-2">
+                        {[
+                          "50 minutes of AI voice calls",
+                          "NZ local phone number included",
+                          "Basic OpenAI voices (3 voice options)",
+                          "Speech recognition & AI responses",
+                          "24/7 automated answering",
+                          "Email support only",
+                        ].map((feature, idx) => (
+                          <li key={idx} className="flex items-center gap-2">
+                            <svg
+                              className="w-5 h-5 text-green-400 flex-shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="3"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                            {feature}
+                          </li>
+                        ))}
                       </ul>
                       <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded font-medium mt-auto">
                         Get Started
@@ -389,122 +317,36 @@ function App() {
                           Most Popular
                         </span>
                       </h3>
-                      <p className="text-xl font-semibold mb-4">
+                      <p className="text-xl font-semibold">
                         $59 USD / $99 NZD per month
                       </p>
-                      <ul className="mb-6 space-y-2">
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          100 minutes of AI voice calls
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          NZ local phone number included
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          Basic OpenAI voices (6 voice options)
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          Speech recognition & AI responses
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          24/7 automated answering
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          Basic analytics dashboard
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          Live chat support
-                        </li>
+                      <ul className="mb-6 space-y-2 mt-2">
+                        {[
+                          "100 minutes of AI voice calls",
+                          "NZ local phone number included",
+                          "Basic OpenAI voices (6 voice options)",
+                          "Speech recognition & AI responses",
+                          "24/7 automated answering",
+                          "Basic analytics dashboard",
+                          "Live chat support",
+                        ].map((feature, idx) => (
+                          <li key={idx} className="flex items-center gap-2">
+                            <svg
+                              className="w-5 h-5 text-green-400 flex-shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="3"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                            {feature}
+                          </li>
+                        ))}
                       </ul>
                       <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded font-medium mt-auto">
                         Get Started
@@ -518,122 +360,36 @@ function App() {
                           Coming Soon
                         </span>
                       </h3>
-                      <p className="text-xl font-semibold mb-4">
+                      <p className="text-xl font-semibold">
                         $149 USD / $251 NZD per month
                       </p>
-                      <ul className="mb-6 space-y-2">
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          300 minutes of AI voice calls
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          NZ local + toll-free number
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          Premium OpenAI voices (HD quality)
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          Advanced conversation flows
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          CRM integrations
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          Call recordings & transcripts
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <svg
-                            className="w-5 h-5 text-green-400 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          Priority support
-                        </li>
+                      <ul className="mb-6 space-y-2 mt-2">
+                        {[
+                          "300 minutes of AI voice calls",
+                          "NZ local + toll-free number",
+                          "Premium OpenAI voices (HD quality)",
+                          "Advanced conversation flows",
+                          "CRM integrations",
+                          "Call recordings & transcripts",
+                          "Priority support",
+                        ].map((feature, idx) => (
+                          <li key={idx} className="flex items-center gap-2">
+                            <svg
+                              className="w-5 h-5 text-green-400 flex-shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="3"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                            {feature}
+                          </li>
+                        ))}
                       </ul>
                       <button
                         className="bg-slate-600 text-white px-6 py-2 rounded font-medium mt-auto cursor-not-allowed"
