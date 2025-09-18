@@ -9,6 +9,8 @@ import { supabase } from "./lib/supabaseClient";
 import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
 import ClientDashboard from "./pages/ClientDashboard";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 function App() {
   useEffect(() => {
@@ -103,6 +105,8 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route
           path="*"
           element={
@@ -378,39 +382,20 @@ function App() {
               </section>
 
               {/* Footer */}
-              <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-700">
-                <div className="max-w-7xl mx-auto text-center">
-                  <div className="text-2xl font-bold text-white mb-4">
-                    <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                      SkyGuyver
-                    </span>
-                  </div>
-                  <p className="text-slate-400 mb-8">
-                    AI-powered phone assistants for the modern business era
-                  </p>
-                  <div className="flex justify-center space-x-6 mb-8">
-                    <a
-                      href="#"
-                      className="text-slate-400 hover:text-white transition-colors"
-                    >
-                      Privacy Policy
-                    </a>
-                    <a
-                      href="#"
-                      className="text-slate-400 hover:text-white transition-colors"
-                    >
-                      Terms of Service
-                    </a>
-                    <a
-                      href="#"
-                      className="text-slate-400 hover:text-white transition-colors"
-                    >
-                      Contact
-                    </a>
-                  </div>
-                  <p className="text-slate-500 text-sm">
-                    © 2024 SkyGuyver. All rights reserved.
-                  </p>
+              <footer className="w-full bg-slate-900 text-slate-400 py-6 mt-12">
+                <div className="max-w-7xl mx-auto flex justify-center space-x-8">
+                  <a
+                    href="/privacy-policy"
+                    className="hover:text-white underline transition-colors"
+                  >
+                    Privacy Policy
+                  </a>
+                  <a
+                    href="/terms-of-service"
+                    className="hover:text-white underline transition-colors"
+                  >
+                    Terms of Service
+                  </a>
                 </div>
               </footer>
             </div>
