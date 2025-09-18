@@ -280,27 +280,100 @@ function App() {
                       </p>
                       <ul className="mb-6 space-y-2">
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          {/* Green check SVG */}
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           50 minutes of AI voice calls
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           NZ local phone number included
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           Basic OpenAI voices (3 voice options)
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           Speech recognition & AI responses
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           24/7 automated answering
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           Email support only
                         </li>
                       </ul>
@@ -321,31 +394,115 @@ function App() {
                       </p>
                       <ul className="mb-6 space-y-2">
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           100 minutes of AI voice calls
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           NZ local phone number included
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           Basic OpenAI voices (6 voice options)
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           Speech recognition & AI responses
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           24/7 automated answering
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           Basic analytics dashboard
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           Live chat support
                         </li>
                       </ul>
@@ -366,31 +523,115 @@ function App() {
                       </p>
                       <ul className="mb-6 space-y-2">
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           300 minutes of AI voice calls
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           NZ local + toll-free number
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           Premium OpenAI voices (HD quality)
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           Advanced conversation flows
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           CRM integrations
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           Call recordings & transcripts
                         </li>
                         <li className="flex items-center gap-2">
-                          <span className="text-blue-400 text-lg">✦</span>
+                          <svg
+                            className="w-5 h-5 text-green-400 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
                           Priority support
                         </li>
                       </ul>
