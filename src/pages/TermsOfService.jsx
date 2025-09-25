@@ -2,7 +2,7 @@ function TermsOfService() {
   return (
     <div className="min-h-screen bg-slate-900 text-white p-8">
       <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
-      <p className="mb-2 text-slate-400">Last Updated: [Date]</p>
+      <p className="mb-2 text-slate-400">Last Updated: September 19, 2025</p>
       <h2 className="text-xl font-semibold mt-6 mb-2">1. Agreement to Terms</h2>
       <p className="mb-4">
         By accessing and using our AI voice assistant services, you agree to be
@@ -109,7 +109,7 @@ function TermsOfService() {
       </h2>
       <p>
         For questions about these terms, contact us at:{" "}
-        <span className="underline text-blue-400">[your email]</span>
+        <span className="underline text-blue-400">legal@skyguyver.com</span>
       </p>
     </div>
   );

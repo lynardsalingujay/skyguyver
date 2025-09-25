@@ -2,7 +2,7 @@ function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-slate-900 text-white p-8">
       <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
-      <p className="mb-2 text-slate-400">Last Updated: [Date]</p>
+      <p className="mb-2 text-slate-400">Last Updated: September 19, 2025</p>
       <h2 className="text-xl font-semibold mt-6 mb-2">1. Introduction</h2>
       <p className="mb-4">
         This Privacy Policy explains how we collect, use, and protect your
@@ -127,13 +127,11 @@ function PrivacyPolicy() {
         For privacy-related questions or to exercise your rights, contact us at:
         <br />
         Email:{" "}
-        <span className="underline text-blue-400">
-          privacy@yourbusiness.co.nz
-        </span>
+        <span className="underline text-blue-400">legal@skyguyver.com</span>
         <br />
-        Address: [Your Business Address]
+        Address: Rolleston, New Zealand
         <br />
-        Phone: [Your Phone Number]
+        Phone: 021-123-4567
       </p>
     </div>
   );
